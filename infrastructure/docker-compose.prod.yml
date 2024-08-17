@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  back-nest:
+    build:
+      context: ../packages/back-nest
+      dockerfile: Dockerfile
+    ports:
+      - "80:3000"  # Expose to port 80 in production
+    environment:
+      - NODE_ENV=production
+    command: npm run start:prod  # Run the production server
+
+  front-react:
+    build:
+      context: ../packages/front-react
+      dockerfile: Dockerfile
+    ports:
+      - "80:3000"  # Expose to port 80 in production
+    environment:
+      - NODE_ENV=production
+    command: serve -s build  # Serve static files after building
+    depends_on:
+      - back-nest
