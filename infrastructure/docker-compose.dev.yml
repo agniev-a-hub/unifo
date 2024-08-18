@@ -1,28 +1,26 @@
-version: '3.8'
-
 services:
   back-nest:
     build:
       context: ../packages/back-nest
       dockerfile: Dockerfile
+    env_file:
+      - ../packages/front-react/.env.development
     ports:
-      - "3001:3000"
+      - "${BACK_NEST_APP_PORT}:${BACK_NEST_CONTAINER_PORT}"
     volumes:
       - ../packages/back-nest:/app # Do not use volues in prod for a reason
       - /app/node_modules
-    environment:
-      - NODE_ENV=development
     command: npm run start:dev  # NestJS development server with hot-reload
 
   front-react:
     build:
       context: ../packages/front-react
       dockerfile: Dockerfile
+    env_file:
+      - ../packages/front-react/.env.development
     ports:
-      - "3000:3000"
+      - "${FRONT_REACT_APP_PORT}:${FRONT_REACT_CONTAINER_PORT}"
     volumes:
       - ../packages/front-react:/app # Do not use volues in prod for a reason
       - /app/node_modules
-    environment:
-      - NODE_ENV=development
     command: npm run dev  # React development server
