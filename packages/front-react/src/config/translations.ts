@@ -1,8 +1,6 @@
 const resources = {
   en: {
-    Core: {
-      dasjndjas: 'djasdjaj',
-    },
+    Core: {},
   },
 };
 

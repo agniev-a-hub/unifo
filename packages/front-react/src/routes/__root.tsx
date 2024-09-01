@@ -1,14 +1,19 @@
-import { AppBar } from '@mui/material';
 import { createRootRoute, Outlet } from '@tanstack/react-router';
 import { TanStackRouterDevtools } from '@tanstack/router-devtools';
+
+import { LandingLayout } from '../layouts/LandingLayout';
+import { Container } from '@mui/material';
 
 export const Route = createRootRoute({
   component: () => {
     return (
       <>
-        <AppBar>123</AppBar>
-        <Outlet />
-        <TanStackRouterDevtools />
+        <LandingLayout>
+          <Container maxWidth="xl">
+            <Outlet />
+          </Container>
+          <TanStackRouterDevtools />
+        </LandingLayout>
       </>
     );
   },

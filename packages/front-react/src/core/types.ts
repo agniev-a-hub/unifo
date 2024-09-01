@@ -34,4 +34,4 @@ export interface CookieAttributes {
    * Allows for setting custom attributes not predefined in this type.
    */
   [key: string]: any;
-};
+}

@@ -1,4 +1,4 @@
-import { CssBaseline, NoSsr } from '@mui/material';
+import { NoSsr } from '@mui/material';
 import { StyledEngineProvider } from '@mui/material/styles';
 import { createRouter, RouterProvider } from '@tanstack/react-router';
 import { StrictMode } from 'react';
@@ -6,8 +6,8 @@ import ReactDOM from 'react-dom/client';
 import { I18nextProvider } from 'react-i18next';
 
 import i18n from './config/i18n';
-import { routeTree } from './routeTree.gen';
 import { ThemeProvider } from './core/ThemeProvider';
+import { routeTree } from './routeTree.gen';
 
 const router = createRouter({ routeTree });
 
