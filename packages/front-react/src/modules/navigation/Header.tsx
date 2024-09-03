@@ -4,7 +4,7 @@ import { FC, ReactNode, useState, MouseEvent } from 'react';
 import { useRoutes } from '../../core/hooks/useRoutes';
 
 const pages = ['Products', 'Pricing', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const settings = ['Profile', 'Account', 'Dashboard', 'UNIFOut'];
 
 export const Header: FC = () => {
   const routes = useRoutes();
@@ -46,7 +46,7 @@ export const Header: FC = () => {
                 textDecoration: 'none',
               }}
             >
-              LOGO
+              UNIFO
             </Typography>
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
               <IconButton
@@ -99,7 +99,7 @@ export const Header: FC = () => {
                 textDecoration: 'none',
               }}
             >
-              LOGO
+              UNIFO
             </Typography>
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
               {pages.map((page) => (
